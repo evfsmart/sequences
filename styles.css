@@ -8,16 +8,20 @@ body {
 h1 {
   text-shadow: 1px 1px white;
   font-size: 4rem;
-  margin-top: 40px;
+  margin-top: 10px;
+  padding-right: 40px;
 }
 
 h2 {
   font-size: 1.5rem;
   line-height: 1.5;
-  margin:  3%;
 }
 
-.container {
+.row {
+  display: block;
+}
+
+.btncontainer {
   display: block;
   width: 50%;
   margin: auto;
@@ -81,6 +85,18 @@ h2 {
   background-color: grey;
 }
 
+.nav-img {
+  border: 3px solid transparent;
+  border-radius: 16px 4px 16px 4px;
+  margin-right: 4px;
+  max-height: 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-img:hover {
+  border: 3px solid #ff00e1;
+}
+
 @media (max-device-width: 900px){
   h1 {
     color: blue;
@@ -93,7 +109,7 @@ h2 {
     font-size: 1.5rem;
   }
 
-  .container {
+  .btncontainer {
     margin-top: 100px;
     width: 100%;
   }

@@ -7,11 +7,20 @@ let level = 0;
  // Press any key to start the game   
 $(document).keypress(function() {
     if (started === false) {
-        $("h2").text(`Level ${level}`)
+        $("h2").text(`Level ${level}`);
         nextSequence();
         started = true;
     }
 });
+
+// Click button to start the game
+$(".startbtn").click(function() {
+    if (started === false) {
+        $("h2").text(`Level ${level}`);
+        nextSequence();
+        started = true;
+    }
+})
 
 // When a button with class .btn is clicked
 // Add button's id to userClickedPattern array and play sound 
@@ -41,8 +50,9 @@ function checkAnswer(currentLevel) {
         $("body").addClass("game-over");
         setTimeout(function() {
             $("body").removeClass("game-over");} , 200);
-            $("h2").text("Game over. Press any key to restart.");
             startOver();
+            $("h2").html(`Game over. <br /> Press any key or <button class=startbtn id=startbtn>click</button> to restart.`);
+            $(".btn").slideUp().slideDown();
         }
 }
 
